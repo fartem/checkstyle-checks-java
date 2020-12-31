@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'com.smlnskgmail.jaman.checkstyle'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.puppycrawl.tools:checkstyle:8.38'
+}
+
+test {
+    useJUnitPlatform()
+}
