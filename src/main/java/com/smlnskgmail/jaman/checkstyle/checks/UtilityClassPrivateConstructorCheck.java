@@ -19,17 +19,15 @@ public class UtilityClassPrivateConstructorCheck extends AbstractCheck {
                 TokenUtil.forEachChild(
                         objBlock,
                         TokenTypes.CTOR_DEF,
-                        detailAST -> {
-                            TokenUtil.forEachChild(
-                                    detailAST,
-                                    TokenTypes.MODIFIERS,
-                                    modifiers -> {
-                                        if (!modifiers.branchContains(TokenTypes.LITERAL_PRIVATE)) {
-                                            log(ast);
-                                        }
+                        detailAST -> TokenUtil.forEachChild(
+                                detailAST,
+                                TokenTypes.MODIFIERS,
+                                modifiers -> {
+                                    if (!modifiers.branchContains(TokenTypes.LITERAL_PRIVATE)) {
+                                        log(ast);
                                     }
-                            );
-                        }
+                                }
+                        )
                 );
             }
         }

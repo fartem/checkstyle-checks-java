@@ -1,9 +1,37 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'de.aaschmid.cpd' version '3.1'
 }
 
 group 'com.smlnskgmail.jaman.checkstyle'
 version '1.0.0'
+
+checkstyle {
+    toolVersion '8.38'
+    ignoreFailures false
+    showViolations true
+
+    def checkstyleConfigPath = "$rootDir/checkstyle.xml"
+    def checkstyleConfig = new File(checkstyleConfigPath)
+    new URL(
+            "https://raw.githubusercontent.com/fartem/repository-rules/master/rules/java/checkstyle/checkstyle.xml"
+    ).withInputStream {
+        i -> checkstyleConfig.withOutputStream {
+            it << i
+        }
+    }
+
+    configFile file(checkstyleConfigPath)
+}
+
+checkstyleMain {
+    source = 'src/main/java'
+}
+
+cpd {
+    language = 'java'
+}
 
 repositories {
     mavenCentral()
@@ -11,8 +39,4 @@ repositories {
 
 dependencies {
     implementation 'com.puppycrawl.tools:checkstyle:8.38'
-}
-
-test {
-    useJUnitPlatform()
 }
