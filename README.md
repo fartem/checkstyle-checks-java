@@ -8,9 +8,9 @@ Custom Checkstyle checks for Java projects.
 
 ## Checks
 
-| Check | Description | Level |
+| Check | Description |
 | --- | --- | --- |
-| `UtilityClassPrivateConstructorCheck` | Check primary private constructor in Utility class | `Error` |
+| `UtilityClassPrivateConstructorCheck` | Check primary private constructor in Utility class |
 
 ## Installation
 
