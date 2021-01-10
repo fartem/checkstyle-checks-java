@@ -16,7 +16,7 @@ Custom Checkstyle checks for Java projects.
 
 ### Gradle
 
-If you are using [Checkstyle plugin]() for Gradle, add checks project as dependency in the `dependencies` section in the `build.gradle`:
+If you are using [Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) for Gradle, add checks project as dependency in the `dependencies` section in the `build.gradle`:
 
 ```groovy
 checkstyle 'com.github.fartem:checkstyle-checks-java:master'
