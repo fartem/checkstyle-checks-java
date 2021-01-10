@@ -1,6 +1,6 @@
 # checkstyle-checks-java
 
-[![GitHubActions](https://github.com/fartem/checkstyle-checks-java/workflows/Build/badge.svg)](https://github.com/fartem/checkstyle-checks-hava/actions?query=workflow%3ABuild)
+[![GitHubActions](https://github.com/fartem/checkstyle-checks-java/workflows/Build/badge.svg)](https://github.com/fartem/checkstyle-checks-java/actions?query=workflow%3ABuild)
 
 ## About
 
