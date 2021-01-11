@@ -9,7 +9,7 @@ Custom Checkstyle checks for Java projects.
 ## Checks
 
 | Check | Description |
-| --- | --- | --- |
+| --- | --- |
 | `UtilityClassPrivateConstructorCheck` | Check primary private constructor in Utility class |
 
 ## Installation
