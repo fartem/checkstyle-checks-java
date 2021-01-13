@@ -16,6 +16,14 @@ Custom Checkstyle checks for Java projects.
 
 ### Gradle
 
+Add `https://jitpack.io` as Maven repository to `build.gradle` (needs for downloading dependencies from GitHub):
+
+```groovy
+repositories {
+    maven { url "https://jitpack.io" }
+}
+```
+
 If you are using [Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) for Gradle, add checks project as dependency in the `dependencies` section in the `build.gradle`:
 
 ```groovy
