@@ -5,13 +5,25 @@ import com.puppycrawl.tools.checkstyle.api.DetailAST;
 import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class UtilityClassPrivateConstructorCheck extends AbstractCheck {
+
+    private static final List<String> UTILITY_CLASS_POSTFIX = Arrays.asList(
+            "Utils",
+            "Util",
+            "Tools",
+            "Tool",
+            "Helper"
+    );
 
     private static final String MESSAGE_KEY = "UtilityClassPrivateConstructorCheck";
 
     @Override
     public void visitToken(DetailAST ast) {
-        if (ast.findFirstToken(TokenTypes.IDENT).getText().endsWith("Utils")) {
+        String className = ast.findFirstToken(TokenTypes.IDENT).getText();
+        if (UTILITY_CLASS_POSTFIX.contains(className)) {
             final DetailAST objBlock = ast.findFirstToken(TokenTypes.OBJBLOCK);
             if (objBlock.getChildCount(TokenTypes.CTOR_DEF) == 0) {
                 log(ast);
