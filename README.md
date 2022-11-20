@@ -8,8 +8,8 @@ Custom Checkstyle checks for Java projects.
 
 ## Checks
 
-| Check | Description |
-| --- | --- |
+| Check                                 | Description                                        |
+|---------------------------------------|----------------------------------------------------|
 | `UtilityClassPrivateConstructorCheck` | Check primary private constructor in Utility class |
 
 ## Installation
@@ -20,11 +20,14 @@ Add `https://jitpack.io` as Maven repository to `build.gradle` (needs for downlo
 
 ```groovy
 repositories {
-    maven { url "https://jitpack.io" }
+    maven {
+        url "https://jitpack.io"
+    }
 }
 ```
 
-If you are using [Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) for Gradle, add checks project as dependency in the `dependencies` section in the `build.gradle`:
+If you are using [Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) for Gradle, add
+checks project as dependency in the `dependencies` section in the `build.gradle`:
 
 ```groovy
 checkstyle 'com.github.fartem:checkstyle-checks-java:master'
@@ -35,14 +38,16 @@ checkstyle 'com.github.fartem:checkstyle-checks-java:master'
 Add to `TreeWalker` module:
 
 ```xml
+
 <module name="com.smlnskgmail.jaman.checkstyle.checks.UtilityClassPrivateConstructorCheck">
-    <property name="id" value="UtilityClassPrivateConstructorCheck" />
+    <property name="id" value="UtilityClassPrivateConstructorCheck"/>
 </module>
 ```
 
 ## How to contribute
 
-Read [Commit Convention](https://github.com/fartem/repository-rules/blob/master/commit-convention/COMMIT_CONVENTION.md). Make sure your build is green before you contribute your pull request. Then:
+Read [Commit Convention](https://github.com/fartem/repository-rules/blob/master/commit-convention/COMMIT_CONVENTION.md).
+Make sure your build is green before you contribute your pull request. Then:
 
 ```shell
 ./gradlew clean

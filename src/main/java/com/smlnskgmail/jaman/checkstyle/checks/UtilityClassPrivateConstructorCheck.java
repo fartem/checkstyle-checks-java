@@ -18,8 +18,6 @@ public class UtilityClassPrivateConstructorCheck extends AbstractCheck {
             "Helper"
     );
 
-    private static final String MESSAGE_KEY = "UtilityClassPrivateConstructorCheck";
-
     @Override
     public void visitToken(DetailAST ast) {
         String className = ast.findFirstToken(TokenTypes.IDENT).getText();
@@ -46,7 +44,7 @@ public class UtilityClassPrivateConstructorCheck extends AbstractCheck {
     }
 
     private void log(DetailAST ast) {
-        log(ast.getLineNo(), MESSAGE_KEY);
+        log(ast.getLineNo(), UtilityClassPrivateConstructorCheck.class.getName());
     }
 
     @Override
@@ -61,9 +59,7 @@ public class UtilityClassPrivateConstructorCheck extends AbstractCheck {
 
     @Override
     public int[] getRequiredTokens() {
-        return new int[] {
-                TokenTypes.CLASS_DEF,
-        };
+        return new int[]{TokenTypes.CLASS_DEF};
     }
 
 }
